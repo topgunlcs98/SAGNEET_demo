@@ -1,0 +1,32 @@
+{
+    "Lang-6": {
+        "path": "src/main/java/org/apache/commons/lang3/text/translate/CharSequenceTranslator.java",
+        "location": "95",
+        "retreved_patch": "pos += Character . charCount ( Character . codePointAt ( input , pt ) ) ;",
+        "fixes": "pos += Character . charCount ( Character . codePointAt ( input , pt ) ) ;"
+    },
+    "Lang-16": {
+        "path": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "location": "458",
+        "retreved_patch": "if ( StringUtils . isEmpty ( str ) ) {",
+        "fixes": "if ( str . startsWith ( 0x ) || str . startsWith ( - 0x ) || str . startsWith ( 0X ) || str . startsWith ( - 0X ) ) {"
+    },
+    "Closure-10": {
+        "path": "src/com/google/javascript/jscomp/NodeUtil.java",
+        "location": "1417",
+        "retreved_patch": "return munger . matches ( onType , aspectType ) ;",
+        "fixes": "return anyResultsMatch ( n , MAY _ BE _ STRING _ PREDICATE ) ;"
+    },
+    "Math-41": {
+        "path": "src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java",
+        "location": "520",
+        "retreved_patch": "for ( int i = begin ; i < n ; i ++ ) {",
+        "fixes": "for ( int i = begin ; i < begin + length ; i ++ ) {"
+    },
+    "Time-4": {
+        "path": "src/main/java/org/joda/time/Partial.java",
+        "location": "464",
+        "retreved_patch": "Object newS = ObjectSerializer . doSerialization ( newLoader , orig ) ;",
+        "fixes": "Partial newPartial = new Partial ( newTypes , newValues , iChronology ) ;"
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "Lang-6": {
+        "path": "src/main/java/org/apache/commons/lang3/text/translate/CharSequenceTranslator.java",
+        "location": "95",
+        "fixes": "pos += Character . charCount ( Character . codePointAt ( input , pt ) ) ;",
+        "status": "Match",
+        "generated_patch": ""
+    },
+    "Lang-16": {
+        "path": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+        "location": "458",
+        "fixes": "if ( str . startsWith ( 0x ) || str . startsWith ( - 0x ) || str . startsWith ( 0X ) || str . startsWith ( - 0X ) ) {",
+        "status": "Compilable",
+        "generated_patch": "if ( str . startsWith ( 0x ) ) {"
+    },
+    "Closure-10": {
+        "path": "src/com/google/javascript/jscomp/NodeUtil.java",
+        "location": "1417",
+        "fixes": "return anyResultsMatch ( n , MAY _ BE _ STRING _ PREDICATE ) ;",
+        "status": "Fail",
+        "generated_patch": "return allResultsMatch ( n , MAY _ BE _ STRING ) ;"
+    },
+    "Math-41": {
+        "path": "src/main/java/org/apache/commons/math/stat/descriptive/moment/Variance.java",
+        "location": "520",
+        "fixes": "for ( int i = begin ; i < begin + length ; i ++ ) {",
+        "status": "Fail",
+        "generated_patch": "for ( int i = begin ; i < weights.length ; i ++ ) {"
+    },
+    "Time-4": {
+        "path": "src/main/java/org/joda/time/Partial.java",
+        "location": "464",
+        "fixes": "Partial newPartial = new Partial ( newTypes , newValues , iChronology ) ;",
+        "status": "Fail",
+        "generated_patch": "Partial newPartial = new Partial ( newTypes , newValues,  iChronology ) ;"
+    }
+}
