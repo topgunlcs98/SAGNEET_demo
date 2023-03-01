@@ -13,6 +13,7 @@ DATA_CONFIGS = dict(CON.items('D4J'))
 D4J_WORKSPACE=DATA_CONFIGS['d4j_workspace']
 
 
+## insert the patch to its corresponding position
 def apply_patch(proj, patch, path, loc):
     bug_path = f'{D4J_WORKSPACE}{proj}/{path}'
     print(bug_path)
@@ -35,6 +36,7 @@ def apply_patch(proj, patch, path, loc):
             index += 1
 
 
+## test the whole project within /timeout
 def test_project(proj, timeout=600):
     proj_dir = f'{D4J_WORKSPACE}{proj}'
     os.chdir(proj_dir)
@@ -55,12 +57,14 @@ def test_project(proj, timeout=600):
         return 'Fail'
 
 
+## checkout the buggy version of a project
 def checkout_d4j_buggy(proj, id):
 # defects4j checkout -p Lang -v 1b -w /tmp/lang_1_buggy
     dest_dir = f'{D4J_WORKSPACE}{proj}'
     subprocess.call(["defects4j", "checkout", "-p", proj, "-v", f"{id}b", "-w", dest_dir],shell=False)
 
 
+## check if the project can be compiled or not
 def compile_fix(proj):
     project_dir = f'{D4J_WORKSPACE}{proj}'
     os.chdir(project_dir)
